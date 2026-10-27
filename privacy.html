@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy · Data Practice Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="lnav"><a class="lbrand" href="./"><span class="logo"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><b data-site="name">Data Practice Lab</b><small>Privacy policy</small></span></a><a class="lnk" href="./">Back to the site</a></header>
+<main class="doc">
+<h1>Privacy policy</h1>
+<p class="meta">Last updated: <b>[add date]</b>. This is a starting draft. Have it reviewed before you rely on it.</p>
+
+<p><b data-site="name">Data Practice Lab</b> ("the site") is run by <b data-site="owner">the site owner</b> ("we"). This policy explains what personal data we collect when you use the site, why, and the choices you have. We follow India's Digital Personal Data Protection Act, 2023 (DPDP Act).</p>
+
+<h2>What we collect</h2>
+<ul>
+  <li><b>Account details:</b> your name, email address and, if you sign in with Google, your Google profile photo address. Passwords are handled by Supabase Auth and stored only as a secure hash. We never see your password.</li>
+  <li><b>Learning progress:</b> which chapters and lessons you completed, your practice streak, your saved formula-library entries and your display settings (theme, text size).</li>
+  <li><b>Activity dates:</b> when you joined and when you last used the site.</li>
+  <li><b>Certificates:</b> the name on the certificate, the course and level, and the date of issue.</li>
+</ul>
+<p>We don't use advertising, tracking pixels or analytics cookies. Your practice answers (formulas, queries) run inside your browser and are not sent to us.</p>
+
+<h2>Why we use it</h2>
+<ul>
+  <li>To let you sign in and keep your progress on any device.</li>
+  <li>To issue certificates and let others verify them.</li>
+  <li>To show the leaderboard, if you choose to appear on it.</li>
+  <li>To understand how many people use the site and keep it working (the site owner can see a list of accounts with name, email, join date, last-active date and progress counts).</li>
+</ul>
+<p>The legal basis is your consent, which you give by creating an account. You can withdraw it at any time by asking us to delete your account.</p>
+
+<h2>What is public</h2>
+<ul>
+  <li><b>Leaderboard:</b> your first name and last-name initial and your score. It's on by default and you can turn it off in <i>My profile</i>; turning it off removes your entry.</li>
+  <li><b>Certificates:</b> anyone with a certificate ID can see the name, course, level and date on that certificate. This is how employers verify it.</li>
+</ul>
+
+<h2>Where it's stored</h2>
+<p>Data is stored with Supabase (database and sign-in), and the website is hosted on Vercel. Both act as our data processors. If you sign in with Google, Google shares your name, email and profile photo with us. Fonts are loaded from Google Fonts.</p>
+
+<h2>How long we keep it</h2>
+<p>We keep your account and progress while your account exists. When you delete your account, your account, progress, leaderboard entry and certificates are removed straight away, so your certificates will no longer verify. If you ask by email instead, we do this within 30 days. If an account is unused for 3 years, we may delete it.</p>
+
+<h2>Your rights</h2>
+<p>Under the DPDP Act you can ask to access, correct or erase your personal data, and to nominate someone to act for you. You can:</p>
+<ul>
+  <li>Correct your name any time in <i>My profile</i>.</li>
+  <li>Download a copy of your data with <i>My profile → Download my data</i>.</li>
+  <li>Delete your account yourself with <i>My profile → Delete my account</i>. It removes your data straight away. You can also ask by email.</li>
+</ul>
+<p>Contact for privacy requests and complaints (Grievance Officer): <b data-site="owner">the site owner</b>, <a data-mail href="#">[add email]</a>. We reply within 30 days. If you are not satisfied, you can complain to the Data Protection Board of India.</p>
+
+<h2>Children</h2>
+<p>The site is meant for people aged 18 and over. If you are under 18, use it only with the consent of a parent or guardian.</p>
+
+<h2>Changes</h2>
+<p>If we change this policy we'll update the date at the top. For important changes we'll tell signed-in users on the site.</p>
+</main>
+<script src="js/config.js"></script>
+<script>
+var S = window.SITE || {};
+document.querySelectorAll("[data-site]").forEach(function (el) { if (S[el.dataset.site]) el.textContent = S[el.dataset.site]; });
+document.querySelectorAll("a[data-mail]").forEach(function (a) { if (S.contactEmail) { a.href = "mailto:" + S.contactEmail; a.textContent = S.contactEmail; } });
+</script>
+</body>
+</html>

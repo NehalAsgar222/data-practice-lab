@@ -1,0 +1,134 @@
+/* Website layer: landing page, sign-in, user menu, panels. Uses the tokens defined in app.css. */
+body.noscroll{overflow:hidden}
+
+/* Loading */
+.loading{min-height:100vh; display:grid; place-content:center; justify-items:center; gap:14px; color:var(--muted)}
+.spinner{width:34px; height:34px; border-radius:50%; border:3px solid var(--line); border-top-color:var(--accent); animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Landing */
+#landing{min-height:100vh; display:flex; flex-direction:column}
+.lnav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px max(16px, calc((100vw - 1180px)/2)); background:var(--surface); border-bottom:1px solid var(--line)}
+.lbrand{display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none}
+.lbrand .logo{width:34px; height:34px; border-radius:8px; display:grid; place-items:center; background:var(--accent); color:var(--accent-ink)}
+.lbrand b{display:block; font-weight:600; line-height:1.2}
+.lbrand small{display:block; color:var(--muted); font-size:.78rem; line-height:1.2}
+.lnk{color:var(--accent); font-weight:600; text-decoration:none}
+.hero{flex:1; width:100%; max-width:1180px; margin:0 auto; padding:48px 16px 56px; display:grid; grid-template-columns:minmax(0,1fr) 400px; gap:48px; align-items:start}
+.eyebrow{color:var(--accent); font-weight:600; font-size:.85rem; letter-spacing:.04em; text-transform:uppercase; margin:0 0 10px}
+.pitch h1{font-family:var(--f-display); font-size:clamp(1.9rem, 4vw, 2.8rem); line-height:1.15; font-weight:600; letter-spacing:-.02em; margin:0 0 14px; text-wrap:balance}
+.lede{font-size:1.12rem; color:var(--muted); max-width:620px; margin:0 0 24px}
+.facts{list-style:none; padding:0; margin:0 0 26px; display:flex; flex-wrap:wrap; gap:28px}
+.facts b{display:block; font-size:1.8rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1.1}
+.facts span{color:var(--muted); font-size:.88rem}
+.feat{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin:0 0 22px}
+.fcard{background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--c); border-radius:var(--r); padding:14px; box-shadow:var(--shadow)}
+.fcard[data-t="excel"]{--c:var(--t-excel)} .fcard[data-t="sql"]{--c:var(--t-sql)} .fcard[data-t="pbi"]{--c:var(--t-pbi)}
+.fcard b{color:var(--c)} .fcard p{margin:6px 0 0; font-size:.9rem; color:var(--muted)}
+.fcard code{font-family:var(--f-mono); font-size:.85em; background:var(--sunk); padding:1px 4px; border-radius:4px; color:var(--ink)}
+.ticks{list-style:none; padding:0; margin:0; display:grid; gap:6px}
+.ticks li{padding-left:26px; position:relative}
+.ticks li::before{content:""; position:absolute; left:4px; top:.45em; width:12px; height:7px; border-left:2px solid var(--ok); border-bottom:2px solid var(--ok); transform:rotate(-45deg)}
+
+/* Auth card */
+.authcard{background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-lg); padding:22px; position:sticky; top:20px; scroll-margin-top:20px}
+.authcard.busy{opacity:.7; cursor:progress}
+.authcard.disabled{opacity:.55; pointer-events:none}
+.authcard.disabled #setupnote{pointer-events:auto}
+.atabs{display:grid; grid-template-columns:1fr 1fr; background:var(--sunk); border-radius:9px; padding:4px; margin:0 0 18px}
+.atabs button{border:none; background:none; padding:8px; border-radius:7px; font-weight:500; color:var(--muted)}
+.atabs button[aria-selected="true"]{background:var(--surface); color:var(--ink); box-shadow:var(--shadow)}
+.gbtn{width:100%; display:flex; align-items:center; justify-content:center; gap:10px; padding:11px; border:1px solid var(--line); background:var(--surface); border-radius:9px; font-weight:500; color:var(--ink)}
+.gbtn:hover{background:var(--sunk)}
+.or{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:.82rem; margin:16px 0}
+.or::before, .or::after{content:""; flex:1; height:1px; background:var(--line)}
+#authform{display:grid; gap:12px}
+#authform label span, .pform label > span{display:block; font-size:.85rem; font-weight:500; margin:0 0 4px}
+#authform input, .pform input:not([type="checkbox"]), #a-q{width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); font:inherit}
+#authform input:focus, .pform input:focus, #a-q:focus{outline:2px solid var(--accent); outline-offset:-1px; border-color:var(--accent)}
+.btn.wide{width:100%; padding:11px}
+.alinks{display:flex; justify-content:space-between}
+.linkbtn{border:none; background:none; padding:0; color:var(--accent); font-size:.88rem}
+.linkbtn:hover{text-decoration:underline}
+.authmsg{margin:0; font-size:.9rem; min-height:0}
+.authmsg.bad{color:var(--bad)} .authmsg.ok{color:var(--ok)}
+.legal{font-size:.8rem; color:var(--muted); margin:14px 0 0}
+.legal a{color:var(--accent)}
+.note{font-size:.85rem; border-radius:8px; padding:10px 12px; margin:12px 0 0}
+.note.demo{background:var(--accent-soft)}
+.note.warn{background:var(--bad-soft)}
+.note code{font-family:var(--f-mono); font-size:.9em}
+.lfoot{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; padding:18px max(16px, calc((100vw - 1180px)/2)); border-top:1px solid var(--line); color:var(--muted); font-size:.85rem}
+.lfoot nav{display:flex; flex-wrap:wrap; gap:16px}
+.lfoot a{color:var(--muted)} .lfoot a:hover{color:var(--accent)}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:minmax(0,1fr); gap:28px; padding-top:28px}
+  .authcard{position:static; order:-1}
+  .feat{grid-template-columns:minmax(0,1fr)}
+  .facts{gap:20px}
+}
+
+/* User menu in the app top bar */
+#userslot{display:flex}
+.umenu{position:relative}
+.avatar{width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); color:var(--accent); font-weight:600; font-size:.82rem; display:grid; place-items:center; overflow:hidden; padding:0}
+.avatar img{width:100%; height:100%; object-fit:cover}
+.umenu-pop{width:240px; gap:2px; padding:8px}
+.umenu-pop .who{padding:6px 10px 10px; border-bottom:1px solid var(--line); margin-bottom:4px; min-width:0}
+.umenu-pop .who b{display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.umenu-pop .who small{display:block; color:var(--muted); font-size:.8rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.umenu-pop button{border:none; background:none; text-align:left; padding:8px 10px; border-radius:7px; color:var(--ink)}
+.umenu-pop button:hover{background:var(--sunk)}
+.umenu-pop hr{border:none; border-top:1px solid var(--line); margin:4px 0; width:100%}
+#signoutbtn{color:var(--bad)}
+
+/* Panels (modal sheet) */
+.panelwrap{position:fixed; inset:0; z-index:90; background:rgba(10,16,28,.45); display:grid; place-items:center; padding:16px}
+.panel{background:var(--surface); color:var(--ink); border-radius:14px; box-shadow:var(--shadow-lg); width:min(760px, 100%); max-height:calc(100vh - 32px); display:flex; flex-direction:column; animation:pop .2s ease}
+.panelhead{display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1px solid var(--line)}
+.panelhead h3{margin:0; font-size:1.15rem; font-weight:600}
+.panelbody{padding:18px; overflow:auto}
+.panelbody h4{margin:22px 0 6px; font-size:1rem}
+.panelbody .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:10px 0}
+.panelbody .row .btn.small{margin-top:0}
+.panelbody .row #a-q{flex:1; min-width:180px; width:auto}
+.pform{display:grid; gap:12px; max-width:480px}
+.pform .check{display:flex; gap:8px; align-items:center; font-size:.92rem}
+.pinfo p{margin:6px 0}
+.pill{display:inline-block; font-size:.76rem; padding:2px 8px; border-radius:99px; background:var(--sunk); color:var(--muted); font-weight:500; white-space:nowrap}
+.pill.ok{background:var(--ok-soft); color:var(--ok)}
+.certs{display:grid; gap:10px; margin:14px 0}
+.certrow{display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line); border-radius:10px; padding:12px 14px}
+.certrow > div{flex:1; min-width:0}
+.certrow small{display:block; color:var(--muted); font-size:.82rem}
+.certrow .bar{height:6px; background:var(--sunk); border-radius:99px; margin-top:8px; overflow:hidden}
+.certrow .bar i{display:block; height:100%; background:var(--accent); border-radius:99px}
+.certrow .btn.small{margin-top:0; white-space:nowrap}
+.panelbody .callout a{word-break:break-all}
+table.board{display:table; width:100%}
+table.board td:first-child, table.board td:last-child{font-variant-numeric:tabular-nums}
+table.board tr.me td{background:var(--accent-soft); font-weight:600}
+.adminchart{width:100%; height:auto; margin:4px 0 8px}
+.adminchart rect{fill:var(--accent)}
+.adminchart line{stroke:var(--line)}
+.adminchart text{fill:var(--muted); font-size:9px; font-family:var(--f-body)}
+@media (max-width: 600px){
+  .panelwrap{padding:0; place-items:end stretch}
+  .panel{border-radius:14px 14px 0 0; max-height:92vh; width:100%}
+  .certrow{flex-wrap:wrap}
+}
+
+/* Public pages (privacy, terms, verify) */
+.doc{max-width:780px; margin:0 auto; padding:32px 16px 64px}
+.doc h1{font-size:2rem; font-weight:600; letter-spacing:-.01em; margin:0 0 6px}
+.doc h2{font-size:1.2rem; font-weight:600; margin:28px 0 8px}
+.doc p, .doc li{color:var(--ink)}
+.doc .meta{color:var(--muted); margin:0 0 24px}
+.doc a{color:var(--accent)}
+.vcard{background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:24px; margin:20px 0}
+.vcard.ok{border-left:5px solid var(--ok)} .vcard.bad{border-left:5px solid var(--bad)}
+.vcard dl{display:grid; grid-template-columns:max-content 1fr; gap:6px 18px; margin:14px 0 0}
+.vcard dt{color:var(--muted)} .vcard dd{margin:0; font-weight:500}
+.btn.danger{color:var(--bad); border-color:var(--bad)}
+.btn.danger:hover{background:var(--bad-soft)}

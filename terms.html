@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms of use · Data Practice Lab</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="lnav"><a class="lbrand" href="./"><span class="logo"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><b data-site="name">Data Practice Lab</b><small>Terms of use</small></span></a><a class="lnk" href="./">Back to the site</a></header>
+<main class="doc">
+<h1>Terms of use</h1>
+<p class="meta">Last updated: <b>[add date]</b>. This is a starting draft. Have it reviewed before you rely on it.</p>
+
+<p>These terms apply to your use of <b data-site="name">Data Practice Lab</b>, run by <b data-site="owner">the site owner</b>. By creating an account or using the site you agree to them.</p>
+
+<h2>The service</h2>
+<p>The site offers free lessons and practice exercises for Excel, SQL and Power BI. It's provided "as is". We try to keep the content accurate, but we don't promise it is error-free, always available, or suitable for any particular purpose. Check important formulas and queries before using them at work.</p>
+
+<h2>Your account</h2>
+<ul>
+  <li>Give a real name if you want it on certificates. Don't pretend to be someone else.</li>
+  <li>Keep your sign-in details safe. You're responsible for activity on your account.</li>
+  <li>One account per person.</li>
+</ul>
+
+<h2>Fair use</h2>
+<p>Don't try to break, overload or get around the security of the site, don't access other people's data, and don't manipulate the leaderboard or certificates (for example with scripts). We can suspend or delete accounts that do this, and cancel certificates obtained this way.</p>
+
+<h2>Certificates</h2>
+<p>Certificates confirm that an account completed every chapter and lesson of a level on this site. They are not a formal qualification and are not endorsed by Microsoft or any other company.</p>
+
+<h2>Open source</h2>
+<p>The site's code is free software under the GNU General Public License v3.0. You may use, study, change and share it under that licence. See the <a href="LICENSE">LICENSE</a> file. It includes HyperFormula (GPL-3.0) and sql.js (MIT).</p>
+
+<h2>Trademarks</h2>
+<p>Excel and Power BI are trademarks of Microsoft Corporation. This site is not affiliated with or endorsed by Microsoft.</p>
+
+<h2>Liability</h2>
+<p>To the extent the law allows, we are not liable for any loss arising from use of the site or its content. Nothing in these terms limits rights you have under Indian consumer law.</p>
+
+<h2>Ending use</h2>
+<p>You can stop using the site and ask us to delete your account at any time (see the <a href="privacy.html">Privacy policy</a>). We may change or close the site; we'll try to give notice first.</p>
+
+<h2>Law and contact</h2>
+<p>These terms are governed by the laws of India. Courts at <b>[add city]</b> have jurisdiction. Questions: <a data-mail href="#">[add email]</a>.</p>
+</main>
+<script src="js/config.js"></script>
+<script>
+var S = window.SITE || {};
+document.querySelectorAll("[data-site]").forEach(function (el) { if (S[el.dataset.site]) el.textContent = S[el.dataset.site]; });
+document.querySelectorAll("a[data-mail]").forEach(function (a) { if (S.contactEmail) { a.href = "mailto:" + S.contactEmail; a.textContent = S.contactEmail; } });
+</script>
+</body>
+</html>
